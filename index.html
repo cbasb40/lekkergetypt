@@ -25,10 +25,17 @@
             height: auto;
         }
     </style>
+    <script>
+        // Check if the page was loaded using HTTP instead of HTTPS
+        if (window.location.protocol === "http:") {
+            // Redirect to the HTTPS version of the page
+            window.location.href = window.location.href.replace("http://", "https://");
+        }
+    </script>
 </head>
 <body>
     <h1>lekkergetypt.nl</h1>
-    <img id="randomGif" alt="Random GIF">
+    <img id="randomGif" alt="Random GIF will load soon">
 
     <script>
         const gifs = [
