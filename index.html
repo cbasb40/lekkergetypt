@@ -1,1 +1,53 @@
-print "hello w0rld"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wat heb jij vandaag lekker getypt?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e; /* Very dark blue/grey */
+            color: white; /* White text */
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>lekkertypen.nl</h1>
+    <img id="randomGif" alt="Random GIF">
+
+    <script>
+        const gifs = [
+            '1.gif', // Replace with actual paths or URLs to the GIFs
+            '2.gif',
+            '3.gif'
+        ];
+
+        // Function to randomly change the GIF
+        function changeGif() {
+            const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+            document.getElementById('randomGif').src = randomGif;
+        }
+
+        // Initial GIF load
+        changeGif();
+
+        // Set interval to change the GIF every 6 seconds (6000 milliseconds)
+        setInterval(changeGif, 6000);
+    </script>
+</body>
+</html>
