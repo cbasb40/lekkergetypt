@@ -20,9 +20,49 @@
             font-size: 3em;
             margin-bottom: 20px;
         }
+        .container {
+            position: relative;
+            width: 450px; /* Wider container to better fit the text */
+            max-width: 90vw; /* Responsive design - prevent overflow on small screens */
+            text-align: center;
+            margin: 20px auto;
+        }
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.9em;
+            text-align: left;
+            padding: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            z-index: 2;
+            width: calc(100% - 30px); /* Account for padding */
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+        .term {
+            font-weight: bold;
+        }
+        .pronunciation {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        .definition {
+            margin-bottom: 10px;
+        }
+        .example {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        .related {
+            font-size: 0.9em;
+        }
         img {
-            width: 300px;
+            width: 100%; /* Fill the container width */
             height: auto;
+            opacity: 0.4; /* Make GIF more transparent for better text readability */
+            border-radius: 8px;
         }
     </style>
     <script>
@@ -34,8 +74,18 @@
     </script>
 </head>
 <body>
-    <h1>lekkergetypt.nl</h1>
-    <img id="randomGif" alt="Random GIF will load soon">
+    <div class="container">
+        <div class="overlay-text">
+            <div class="term">lek·ker ge·typt</div> 
+            <div class="pronunciation">/lɛkər ɣətɪpt/ (IT-term) bijv.nw. en bijw.</div>
+            <div class="definition">1. aanduiding voor computerwerkzaamheden die op efficiënte en vaardige wijze zijn uitgevoerd</div>
+            <div class="definition">2. uitdrukking om aan te geven dat zowel het werkproces als het eindresultaat van een digitale taak van hoge kwaliteit is</div>
+            <div class="definition">3. (vakjargon) compliment binnen de IT-sector voor een prestatie waarbij optimaal gebruik is gemaakt van computertechnologie, met een resultaat dat 'er mag wezen'</div>
+            <div class="example">Voorbeeld: <em>"Je hebt die code lekker getypt, de software draait soepel."</em></div>
+            <div class="related">Verwante termen: <em>lekker gecodeerd</em>, <em>mooi geprogrammeerd</em></div>
+        </div>
+        <img id="randomGif" alt="Random GIF will load soon">
+    </div>
 
     <script>
         const gifs = [
