@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dat heb jij vandaag lekker getypt!</title>
     <style>
+        :root {
+            --background-color: #000000;
+            --text-color: white;
+            --overlay-background: rgba(0, 0, 0, 0.3);
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --background-color: white;
+                --text-color: black;
+                --overlay-background: rgba(255, 255, 255, 0.6);
+            }
+        }
+
         body {
             display: flex;
             flex-direction: column;
@@ -13,8 +27,8 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #1a1a2e; /* Very dark blue/grey */
-            color: white; /* White text */
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
         h1 {
             font-size: 3em;
@@ -35,11 +49,12 @@
             font-size: 0.9em;
             text-align: left;
             padding: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
             z-index: 2;
             width: calc(100% - 30px); /* Account for padding */
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: var(--overlay-background);
             border-radius: 8px;
+            color: var(--text-color);
         }
         .term {
             font-weight: bold;
